@@ -1,6 +1,7 @@
 import { STATIONS } from "../../lib/stations";
 import type { Line } from "../../lib/types";
 import Station from "../Station/Station";
+import * as styles from "./Line.css";
 
 interface Props {
   line: Line;
@@ -8,8 +9,16 @@ interface Props {
 
 export default function Line({ line }: Props) {
   return (
-    <li key={line.id} style={{ color: `${line.colour}` }}>
-      {line.name}
+    <div className={styles.line}>
+      <li
+        key={line.id}
+        className={styles.lineName}
+        style={{
+          borderBottom: `4px solid ${line.colour}`,
+        }}
+      >
+        {line.name}
+      </li>
       <ul>
         {line.stations.map((stationId) => {
           const shownStation = STATIONS.find(
@@ -18,6 +27,6 @@ export default function Line({ line }: Props) {
           return shownStation && <Station station={shownStation} />;
         })}
       </ul>
-    </li>
+    </div>
   );
 }
