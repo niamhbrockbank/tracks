@@ -1,0 +1,36 @@
+import type { StationStatus } from "../../../lib/types";
+import * as styles from "../TrafficLightStatus.css";
+
+interface Props {
+  light: StationStatus;
+  handleChange: () => void;
+  status: StationStatus;
+  name: string;
+}
+
+export default function TrafficLight({
+  light,
+  handleChange,
+  status,
+  name,
+}: Props) {
+  let lightColour = styles.trafficLightRed;
+
+  if (light === "through") {
+    lightColour = styles.trafficLightAmber;
+  } else if (light === "visited") {
+    lightColour = styles.trafficLightGreen;
+  }
+
+  return (
+    <input
+      type="radio"
+      id={`${light}-status`}
+      name={name}
+      value={light}
+      className={lightColour}
+      checked={status === light}
+      onChange={handleChange}
+    />
+  );
+}
