@@ -24,7 +24,9 @@ export default function Line({ line }: Props) {
           const shownStation = STATIONS.find(
             (station) => station.id === stationId
           );
-          return shownStation && <Station station={shownStation} />;
+          return (
+            shownStation && <Station station={shownStation} lineId={line.id} />
+          );
         })}
       </ul>
     </div>

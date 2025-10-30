@@ -1,17 +1,15 @@
 import { style } from "@vanilla-extract/css";
 
  const trafficLight = style({
-    borderRadius: '100%',
-    width: '24px',
-    height: '24px',
-    opacity: '0.6'
+    cursor: 'pointer',
+    height: '25px',
+    width: '25px',
 })
 
-export const trafficLightRed = style([trafficLight, {    border: '1px solid red',
-    backgroundColor: 'red',
-    
+export const trafficLightRed = style([trafficLight, {   
+    accentColor: 'red'
 }])
 
-export const trafficLightAmber = style([trafficLight, {    border: '1px solid orange',   backgroundColor: 'orange',}])
+export const trafficLightAmber = style([trafficLight, {    accentColor: '#ff5e00ff'}])
 
-export const trafficLightGreen = style([trafficLight, {    border: '1px solid green',   backgroundColor: 'green',}])
+export const trafficLightGreen = style([trafficLight, {    accentColor: 'green',}])

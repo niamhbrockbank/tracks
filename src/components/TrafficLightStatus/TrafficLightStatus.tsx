@@ -1,11 +1,38 @@
+import type { Station } from "../../lib/types";
 import * as styles from "./TrafficLightStatus.css";
 
-export default function TrafficLightStatus() {
+interface Props {
+  station: Station;
+  lineId: string;
+}
+
+export default function TrafficLightStatus({ station, lineId }: Props) {
+  // TODO: Get stations across multiple lines to show the same status
   return (
     <>
-      <div className={styles.trafficLightRed}></div>
-      <div className={styles.trafficLightAmber}></div>
-      <div className={styles.trafficLightGreen}></div>
+      <div>
+        <input
+          type="radio"
+          id="untouched-status"
+          name={`${lineId}-${station.id}-status`}
+          value="untouched"
+          className={styles.trafficLightRed}
+        />
+        <input
+          type="radio"
+          id="through-status"
+          name={`${lineId}-${station.id}-status`}
+          value="through"
+          className={styles.trafficLightAmber}
+        />
+        <input
+          type="radio"
+          id="visited-status"
+          name={`${lineId}-${station.id}-status`}
+          value="visited"
+          className={styles.trafficLightGreen}
+        />
+      </div>
     </>
   );
 }
