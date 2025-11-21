@@ -1,5 +1,5 @@
 import type { Station } from "../../lib/types";
-import TrafficLightStatus from "../TrafficLightStatus/TrafficLightStatus";
+import VisitedStatus from "../VisitedStatus/VisitedStatus";
 import * as styles from "./Station.css";
 
 interface Props {
@@ -11,7 +11,7 @@ export default function Station({ station, lineId }: Props) {
   return (
     <div className={styles.station}>
       <li className={styles.stationName}>{station?.name}</li>
-      <TrafficLightStatus
+      <VisitedStatus
         station={station}
         lineId={lineId}
         status={station.status}

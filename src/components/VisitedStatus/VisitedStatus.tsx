@@ -8,7 +8,7 @@ interface Props {
   status: StationStatus;
 }
 
-export default function TrafficLightStatus({ station, lineId, status }: Props) {
+export default function VisitedStatus({ station, lineId, status }: Props) {
   // TODO: Get stations across multiple lines to show the same status
   const [controlledStatus, setControlledStatus] = useState(status);
   const name = `${lineId}-${station.id}-status`;
