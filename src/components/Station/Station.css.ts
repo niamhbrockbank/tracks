@@ -7,7 +7,8 @@ export const station = style([borderRadius, {
     border: '1px solid black',
     padding: '10px 24px',
     display: "flex",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    alignItems: "center"
 }])
 
 export const stationName = style({})

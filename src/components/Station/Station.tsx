@@ -11,7 +11,7 @@ export default function Station({ station, lineId }: Props) {
   return (
     <div className={styles.station}>
       <li className={styles.stationName}>{station?.name}</li>
-      <VisitedStatus station={station} lineId={lineId} />
+      <VisitedStatus station={station} />
     </div>
   );
 }
