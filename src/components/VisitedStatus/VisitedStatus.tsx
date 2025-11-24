@@ -1,7 +1,8 @@
 import { useShallow } from "zustand/shallow";
 import { type Line, type Station } from "../../store/HomeStore";
-import { useUserStore, setStationStatus } from "../../store/userStore";
+
 import TrafficLight from "./TrafficLight/TrafficLight";
+import { setStationStatus, useUserStore } from "../../store/UserStore";
 
 interface Props {
   station: Station;
