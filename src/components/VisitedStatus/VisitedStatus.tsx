@@ -5,16 +5,16 @@ import * as styles from "./VisitedStatus.css";
 import TrafficLight from "./TrafficLight/TrafficLight";
 import {
   setStationStatus,
-  useUserStore,
+  useUserVisitationStore,
   type UserStore,
-} from "../../store/UserStore";
+} from "../../store/UserVisitationStore";
 
 interface Props {
   station: Station;
 }
 
 export default function VisitedStatus({ station }: Props) {
-  const [stationStatus] = useUserStore(
+  const [stationStatus] = useUserVisitationStore(
     useShallow((s: UserStore) => [s[station.id]])
   );
 

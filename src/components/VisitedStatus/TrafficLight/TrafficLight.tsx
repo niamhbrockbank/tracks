@@ -1,4 +1,4 @@
-import type { StationStatus } from "../../../store/UserStore";
+import type { StationStatus } from "../../../store/UserVisitationStore";
 import * as styles from "./TrafficLight.css";
 
 interface Props {

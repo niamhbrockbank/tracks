@@ -8,15 +8,15 @@ export interface UserStore {
     [stationId : Station["id"]]  : StationStatus
 }
 
-const initialUserStore = {
+const initialUserVisitationStore = {
     ...INITIAL_STATION_STATUS
 }
 
-export const useUserStore = create<UserStore>(() => ({
-    ...initialUserStore,
+export const useUserVisitationStore = create<UserStore>(() => ({
+    ...initialUserVisitationStore,
 }))
 
 export function setStationStatus(stationId : string, status: StationStatus) {
-    useUserStore.setState(() => {
+    useUserVisitationStore.setState(() => {
         return  {[stationId] : status}
     })}
