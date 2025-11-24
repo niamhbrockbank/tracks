@@ -1,5 +1,5 @@
 import type { StationStatus } from "../../../store/UserStore";
-import * as styles from "../VisitedStatus.css";
+import * as styles from "./TrafficLight.css";
 
 interface Props {
   light: StationStatus;
