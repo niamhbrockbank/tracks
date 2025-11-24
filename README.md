@@ -67,3 +67,6 @@ export default tseslint.config([
   },
 ])
 ```
+
+## Start up
+* `pnpm run dev`
