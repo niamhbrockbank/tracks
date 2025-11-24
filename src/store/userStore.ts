@@ -4,7 +4,7 @@ import { INITIAL_STATION_STATUS } from "../lib/stations"
 
 export type StationStatus = "untouched" | "through" | "visited"
 
-interface UserStore {
+export interface UserStore {
     [stationId : Station["id"]]  : StationStatus
 }
 

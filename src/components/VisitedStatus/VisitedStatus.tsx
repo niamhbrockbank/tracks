@@ -3,14 +3,20 @@ import { type Station } from "../../store/HomeStore";
 import * as styles from "./VisitedStatus.css";
 
 import TrafficLight from "./TrafficLight/TrafficLight";
-import { setStationStatus, useUserStore } from "../../store/UserStore";
+import {
+  setStationStatus,
+  useUserStore,
+  type UserStore,
+} from "../../store/UserStore";
 
 interface Props {
   station: Station;
 }
 
 export default function VisitedStatus({ station }: Props) {
-  const [stationStatus] = useUserStore(useShallow((s) => [s[station.id]]));
+  const [stationStatus] = useUserStore(
+    useShallow((s: UserStore) => [s[station.id]])
+  );
 
   return (
     <>
