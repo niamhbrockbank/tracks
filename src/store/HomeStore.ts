@@ -6,7 +6,6 @@ export interface Line {
     id: string,
     name: string,
     colour: string,
-    stations : Station["id"][]
 }
 
 export interface Station {

@@ -16,19 +16,16 @@ export default function Line({ line }: Props) {
         key={line.id}
         className={styles.lineName}
         style={{
-          borderBottom: `4px solid ${line.colour}`,
+          borderBottom: `8px solid ${line.colour}`,
         }}
       >
         {line.name}
       </li>
       <ul>
-        {line.stations.map((stationId) => {
-          const shownStation = stations.find((st) => st.id === stationId);
-          return (
-            shownStation && (
-              <Station station={shownStation} key={shownStation.id} />
-            )
-          );
+        {stations.map((station) => {
+          if (station.lines.includes(line.id)) {
+            return <Station station={station} key={station.id} />;
+          }
         })}
       </ul>
     </div>
