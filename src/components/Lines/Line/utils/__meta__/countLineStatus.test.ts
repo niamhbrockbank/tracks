@@ -1,0 +1,1 @@
+test.todo("countStationStatus compiles the statuses of stations on a line")

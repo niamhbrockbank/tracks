@@ -1,5 +1,5 @@
 import type { Station } from "../../store/HomeStore";
-import VisitedStatus from "../VisitedStatus/VisitedStatus";
+import VisitedStatus from "./VisitedStatus/VisitedStatus";
 import * as styles from "./Station.css";
 
 interface Props {

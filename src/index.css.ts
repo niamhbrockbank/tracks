@@ -30,7 +30,7 @@ globalStyle('button', {
   fontSize: '1em',
   fontWeight: 500,
   fontFamily: 'inherit',
-  backgroundColor: '#1a1a1a',
+  backgroundColor: 'whitesmoke',
   cursor: 'pointer',
   'transition': 'border-color 0.25s',
 })

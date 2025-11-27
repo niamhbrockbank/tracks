@@ -1,13 +1,13 @@
 import { useShallow } from "zustand/shallow";
-import { type Station } from "../../store/HomeStore";
+import { type Station } from "../../../store/HomeStore";
 import * as styles from "./VisitedStatus.css";
 
-import TrafficLight from "./TrafficLight/TrafficLight";
+import StatusRoundel from "./StatusRoundel/StatusRoundel";
 import {
   setStationStatus,
   useUserVisitationStore,
   type UserStore,
-} from "../../store/UserVisitationStore";
+} from "../../../store/UserVisitationStore";
 
 interface Props {
   station: Station;
@@ -21,20 +21,20 @@ export default function VisitedStatus({ station }: Props) {
   return (
     <>
       <div className={styles.visitedStatusBar}>
-        <TrafficLight
-          light="untouched"
+        <StatusRoundel
+          option="untouched"
           handleChange={() => setStationStatus(station.id, "untouched")}
-          status={stationStatus}
+          currentStatus={stationStatus}
         />
-        <TrafficLight
-          light="through"
+        <StatusRoundel
+          option="through"
           handleChange={() => setStationStatus(station.id, "through")}
-          status={stationStatus}
+          currentStatus={stationStatus}
         />
-        <TrafficLight
-          light="visited"
+        <StatusRoundel
+          option="visited"
           handleChange={() => setStationStatus(station.id, "visited")}
-          status={stationStatus}
+          currentStatus={stationStatus}
         />
       </div>
     </>

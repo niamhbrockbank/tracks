@@ -15,7 +15,7 @@ export const base = style({
     justifyContent: "center"
 })
 
-export const trafficLight = styleVariants({
+export const statusOption = styleVariants({
     red: [base, {   borderColor: "red",}],
     amber: [base, {     borderColor: "orange",}],
     green : [base, {     borderColor: "green",}]
