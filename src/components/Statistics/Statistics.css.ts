@@ -1,9 +1,11 @@
 import { style } from "@vanilla-extract/css";
 
 export const statsSection = style({
+     width: '80vw',
     border: "1px solid black",
     borderRadius: '8px',
-    padding: "24px 32px"
+    padding: "24px 32px",
+    margin: "auto"
 })
 
 export const statsBox = style({
