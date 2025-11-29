@@ -17,7 +17,7 @@ export default function Roundel({
   if (button) {
     return (
       <button
-        className={styles.roundel[colour || "base"]}
+        className={styles.roundelButton[colour || "base"]}
         title={label}
         onClick={handleClick}
         {...props}
