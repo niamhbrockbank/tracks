@@ -8,7 +8,7 @@ export const circle = createGlobalVar('circle')
 export const district = createGlobalVar('district')
 export const hammersmithCity = createGlobalVar('hammersmith-city')
 export const northern = createGlobalVar('northern')
-export const picadilly = createGlobalVar('picadilly')
+export const piccadilly = createGlobalVar('piccadilly')
 export const victoria = createGlobalVar('victoria')
 export const waterlooCity = createGlobalVar('waterloo-city')
 
@@ -33,7 +33,7 @@ globalStyle(':root', {
     [district]: '#00782A',
     [hammersmithCity]: '#F3A9BB',
     [northern]: "#000000",
-    [picadilly]: '#003688',
+    [piccadilly]: '#003688',
     [victoria]: '#0098D4',
     [waterlooCity]: '#95CDBA'
   }

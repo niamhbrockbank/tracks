@@ -1,12 +1,14 @@
 import {create} from 'zustand'
 import { LINES } from '../lib/lines'
 import { STATIONS } from '../lib/stations'
-
 export interface Line {
     id: string,
     name: string,
-    colour: string,
+    colour: LineColour,
 }
+
+//TODO: Fix LineColour type so its actually just the values of line.id not string
+export type LineColour = Line["id"]
 
 export interface Station {
     id: string,
