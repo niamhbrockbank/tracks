@@ -25,5 +25,15 @@ export default function Roundel({
         <span className={styles.label}>{label}</span>
       </button>
     );
+  } else {
+    return (
+      <div
+        className={styles.roundel[colour || "base"]}
+        title={label}
+        {...props}
+      >
+        <span className={styles.label}>{label}</span>
+      </div>
+    );
   }
 }
