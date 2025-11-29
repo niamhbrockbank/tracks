@@ -1,4 +1,5 @@
 import { style, styleVariants } from "@vanilla-extract/css";
+import { metropolitan } from "../../index.css";
 
 const baseButton = style({
     userSelect: "none",
@@ -29,13 +30,14 @@ const base = style({
     justifyContent: "center"
 })
 
-export type RoundelColour = "green" | "red" | "base" | "amber" 
+export type RoundelColour = "green" | "red" | "base" | "amber" | "metropolitan"
 
 export const roundel = styleVariants({
     base: [base],
-    red: [base, {   borderColor: "red",}],
-    amber: [base, {     borderColor: "orange",}],
-    green : [base, {     borderColor: "green",}]
+    red: [base, {borderColor: "red",}],
+    amber: [base, {borderColor: "orange",}],
+    green : [base, {borderColor: "green",}],
+    metropolitan: [base, {borderColor: metropolitan }]
 })
 
 export const roundelButton = styleVariants({

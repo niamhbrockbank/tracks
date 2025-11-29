@@ -1,4 +1,6 @@
-import {globalStyle, style} from '@vanilla-extract/css'
+import {createGlobalVar, globalStyle, style} from '@vanilla-extract/css'
+
+export const metropolitan = createGlobalVar('metropolitan')
 
 globalStyle(':root', {
   fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif',
@@ -11,6 +13,11 @@ globalStyle(':root', {
 
   fontSynthesis: 'none',
   textRendering: 'optimizeLegibility',
+
+  vars: {
+    '--jubilee' : '#A0A5A9',
+    [metropolitan]: '#9B0056'
+  }
 })
 
 globalStyle('a', {

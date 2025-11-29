@@ -1,10 +1,11 @@
 import { useShallow } from "zustand/shallow";
 import { useHomeStore, type Line } from "../../../store/HomeStore";
-import * as styles from "../Lines.css";
+import * as styles from "./Line.css";
 import { useUserVisitationStore } from "../../../store/UserVisitationStore";
 import { countLineStatus } from "./utils/countLineStatus";
 import { useState } from "react";
 import Stations from "../../Stations/Stations";
+import Roundel from "../../Roundel/Roundel";
 
 interface Props {
   line: Line;
@@ -40,11 +41,11 @@ export default function Line({ line }: Props) {
         >
           {stationsShown ? "Hide" : "Show"}
         </button>
-        <span>
-          {" "}
-          untouched:
-          {untouched} -- through:{through} -- visited:{visited}
-        </span>
+        <div className={styles.lineSummary}>
+          <Roundel label={`${untouched}`} colour="metropolitan" />
+          <Roundel label={`${through}`} />
+          <Roundel label={`${visited}`} />
+        </div>
       </li>
       {stationsShown && <Stations lineId={line.id} stations={stations} />}
     </div>
