@@ -34,17 +34,17 @@ export default function Line({ line }: Props) {
         }}
       >
         {line.name}
-        <span>
-          {" "}
-          untouched:
-          {untouched} -- through:{through} -- visited:{visited}
-        </span>
         <button
           className={styles.showButton}
           onClick={() => setStationsShown(!stationsShown)}
         >
           {stationsShown ? "Hide" : "Show"}
         </button>
+        <span>
+          {" "}
+          untouched:
+          {untouched} -- through:{through} -- visited:{visited}
+        </span>
       </li>
       {stationsShown && <Stations lineId={line.id} stations={stations} />}
     </div>
