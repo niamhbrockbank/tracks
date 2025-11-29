@@ -1,5 +1,6 @@
 import type { StationStatus } from "../../../../../store/UserVisitationStore";
-import * as styles from "./StatusRoundel.css";
+import Roundel from "../../../../Roundel/Roundel";
+import type { RoundelColour } from "../../../../Roundel/Roundel.css";
 
 interface Props {
   option: StationStatus;
@@ -12,23 +13,22 @@ export default function StatusRoundel({
   handleChange,
   currentStatus,
 }: Props) {
-  let optionColour = styles.statusOption["red"];
+  let optionColour: RoundelColour = "red";
 
   if (option === "through") {
-    optionColour = styles.statusOption["amber"];
+    optionColour = "amber";
   } else if (option === "visited") {
-    optionColour = styles.statusOption["green"];
+    optionColour = "green";
   }
 
   const checked = option === currentStatus;
 
   return (
-    <button
-      onClick={handleChange}
-      className={checked ? optionColour : styles.base}
-      title={option}
-    >
-      <span className={styles.label}>{option}</span>
-    </button>
+    <Roundel
+      handleClick={handleChange}
+      colour={checked ? optionColour : undefined}
+      label={option}
+      button
+    />
   );
 }
