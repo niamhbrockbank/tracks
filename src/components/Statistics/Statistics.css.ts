@@ -1,8 +1,9 @@
 import { style } from "@vanilla-extract/css";
 
 export const statsSection = style({
-     width: '80vw',
-    margin: "auto"
+    width: '80vw',
+    margin: "auto",
+    paddingTop: "24px"
 })
 
 export const statsBox = style({
