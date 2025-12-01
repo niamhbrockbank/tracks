@@ -13,20 +13,23 @@ export default function Statistics() {
 
   return (
     <section className={styles.statsSection}>
-      <h3>Statistics</h3>
       <div className={styles.statsBox}>
-        <StatisticsCard title="Stations Visited">
-          {statusTotals.visited}
-        </StatisticsCard>
-        <StatisticsCard title="Stations changed at">
-          {statusTotals.through} Up 3% from last month
-        </StatisticsCard>
-        <StatisticsCard title="Stations not touched">
-          {statusTotals.untouched} Down 6% from last month
-        </StatisticsCard>
-        <StatisticsCard title="Total stations">
-          {stations.length}
-        </StatisticsCard>
+        <StatisticsCard
+          title="No. Visited Stations"
+          content={statusTotals.visited}
+          caption=" -3% from last month"
+        />
+        <StatisticsCard
+          title="No. Changed At Stations"
+          content={statusTotals.through}
+          caption=" +3% from last month"
+        />
+        <StatisticsCard
+          title="No. Untouched Stations"
+          content={statusTotals.untouched}
+          caption="-6% from last month"
+        />
+        <StatisticsCard title="Total Stations" content={stations.length} />
       </div>
     </section>
   );

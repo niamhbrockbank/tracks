@@ -8,5 +8,5 @@ export const statsSection = style({
 export const statsBox = style({
     display: "grid",
     grid: "250px / auto auto",
-    gap: "24px",
+    gap: "36px",
 })

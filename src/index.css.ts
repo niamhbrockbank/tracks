@@ -35,7 +35,7 @@ globalStyle(':root', {
     [northern]: "#000000",
     [piccadilly]: '#003688',
     [victoria]: '#0098D4',
-    [waterlooCity]: '#95CDBA'
+    [waterlooCity]: '#95CDBA',
   }
 })
 

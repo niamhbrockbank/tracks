@@ -3,14 +3,16 @@ import * as styles from "./StatisticsCard.css";
 
 interface Props {
   title?: string;
-  children?: ReactNode;
+  content: ReactNode;
+  caption?: string;
 }
 
-export default function StatisticsCard({ title, children }: Props) {
+export default function StatisticsCard({ title, content, caption }: Props) {
   return (
     <div className={styles.statsCard}>
-      <h1>{title}</h1>
-      <p>{children}</p>
+      <p className={styles.statsTitle}>{title}</p>
+      <span className={styles.statsContent}>{content}</span>
+      <caption className={styles.statsCaption}>{caption}</caption>
     </div>
   );
 }
