@@ -57,7 +57,6 @@ globalStyle('button', {
   fontWeight: 500,
   fontFamily: 'inherit',
   color: 'black',
-  backgroundColor: 'whitesmoke',
   cursor: 'pointer',
   'transition': 'border-color 0.25s',
 })
