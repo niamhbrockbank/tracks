@@ -1,3 +1,4 @@
+
 import type { StationStatus } from "../../../../../store/UserVisitationStore";
 import Roundel from "../../../../Roundel/Roundel";
 import type { RoundelColour } from "../../../../Roundel/Roundel.css";
@@ -27,7 +28,7 @@ export default function StatusRoundel({
     <Roundel
       handleClick={handleChange}
       colour={checked ? optionColour : undefined}
-      label={option}
+      label={option.toUpperCase()}
       smallLabel
       button
     />

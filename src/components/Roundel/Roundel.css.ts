@@ -6,7 +6,7 @@ const baseButton = style({
     userSelect: "none",
     backgroundColor: "transparent",
     color: "grey",
-    border: "12px solid grey",
+    border: "12px solid #ced0d3ff",
     width: "68px",
     height: "68px",
     padding: "12px 0",
@@ -21,7 +21,7 @@ const base = style({
     userSelect: "none",
     backgroundColor: "transparent",
     color: "grey",
-    border: "12px solid grey",
+    border: "12px solid #ced0d3ff",
     width: "48px",
     padding: "12px 0",
     borderRadius: "50%",
@@ -73,7 +73,7 @@ export const labelBase = style({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    border: "0.5px solid #213547",
+    border: "0.5px solid white",
     color: "white",
     backgroundColor: "#0009AB",
     width: "80px",
@@ -83,5 +83,5 @@ export const labelBase = style({
 
 export const label = styleVariants({
     base : [labelBase],
-    small: [labelBase, {fontSize: "small"}]
+    small: [labelBase, {fontSize: "x-small"}]
 })
