@@ -2,13 +2,11 @@ import {create} from 'zustand'
 import { LINES } from '../lib/lines'
 import { STATIONS } from '../lib/stations'
 export interface Line {
-    id: LineColour,
+    id: LineId,
     name: string,
     colour: string,
 }
-
-//TODO: Fix LineColour type so its actually just the values of line.id not string
-export type LineColour = 'metropolitan' | 'jubilee' | 'bakerloo' | 'central' | 'circle' | 'district' | 'hammersmith-city' | 'northern'| 'piccadilly' | 'victoria' | 'waterloo-city'
+export type LineId = 'metropolitan' | 'jubilee' | 'bakerloo' | 'central' | 'circle' | 'district' | 'hammersmith-city' | 'northern'| 'piccadilly' | 'victoria' | 'waterloo-city'
 
 export interface Station {
     id: string,

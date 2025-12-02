@@ -1,6 +1,6 @@
 import { style, styleVariants } from "@vanilla-extract/css";
 import { bakerloo, central, circle, district, hammersmithCity, jubilee, metropolitan, northern, piccadilly, victoria, waterlooCity } from "../../index.css";
-import type { LineColour } from "../../store/HomeStore";
+import type { LineId } from "../../store/HomeStore";
 
 const baseButton = style({
     userSelect: "none",
@@ -31,7 +31,7 @@ const base = style({
     justifyContent: "center"
 })
 
-export type RoundelColour = "green" | "red" | "base" | "amber" | LineColour
+export type RoundelColour = "green" | "red" | "base" | "amber" | LineId
 
 export const roundel = styleVariants({
     base: [base],
