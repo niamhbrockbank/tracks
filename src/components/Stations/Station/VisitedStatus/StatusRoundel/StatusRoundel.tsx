@@ -28,6 +28,7 @@ export default function StatusRoundel({
       handleClick={handleChange}
       colour={checked ? optionColour : undefined}
       label={option}
+      smallLabel
       button
     />
   );

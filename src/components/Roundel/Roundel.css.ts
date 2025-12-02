@@ -69,14 +69,19 @@ export const roundelButton = styleVariants({
     ['waterloo-city']: [baseButton, {borderColor: waterlooCity }],
 })
 
-export const label = style({
+export const labelBase = style({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    border: "1px solid black",
-    color: "black",
+    border: "0.5px solid #213547",
+    color: "white",
+    backgroundColor: "#0009AB",
     width: "80px",
     height: "20px",
     margin: "0 -40px",
-    backgroundColor: "white", 
+})
+
+export const label = styleVariants({
+    base : [labelBase],
+    small: [labelBase, {fontSize: "small"}]
 })
