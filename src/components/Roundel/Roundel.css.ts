@@ -6,7 +6,7 @@ const baseButton = style({
     userSelect: "none",
     backgroundColor: "transparent",
     color: "grey",
-    border: "12px solid grey",
+    border: "12px solid #ced0d3ff",
     width: "68px",
     height: "68px",
     padding: "12px 0",
@@ -21,7 +21,7 @@ const base = style({
     userSelect: "none",
     backgroundColor: "transparent",
     color: "grey",
-    border: "12px solid grey",
+    border: "12px solid #ced0d3ff",
     width: "48px",
     padding: "12px 0",
     borderRadius: "50%",
@@ -69,14 +69,18 @@ export const roundelButton = styleVariants({
     ['waterloo-city']: [baseButton, {borderColor: waterlooCity }],
 })
 
-export const label = style({
+export const labelBase = style({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    border: "1px solid black",
-    color: "black",
+    color: "white",
+    backgroundColor: "#3b40a4ff",
     width: "80px",
     height: "20px",
     margin: "0 -40px",
-    backgroundColor: "white", 
+})
+
+export const label = styleVariants({
+    base : [labelBase],
+    small: [labelBase, {fontSize: "x-small"}]
 })

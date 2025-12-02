@@ -2,6 +2,7 @@ import * as styles from "./Roundel.css";
 
 interface Props {
   label: string;
+  smallLabel?: boolean;
   colour?: styles.RoundelColour;
   title?: string;
   button?: boolean;
@@ -10,12 +11,18 @@ interface Props {
 
 export default function Roundel({
   label,
+  smallLabel = false,
   colour,
   title = label,
   button = false,
   handleClick,
   ...props
 }: Props) {
+  let labelStyle = styles.label["base"];
+  if (smallLabel) {
+    labelStyle = styles.label["small"];
+  }
+
   if (button) {
     return (
       <button
@@ -24,7 +31,7 @@ export default function Roundel({
         onClick={handleClick}
         {...props}
       >
-        <span className={styles.label}>{label}</span>
+        <span className={labelStyle}>{label}</span>
       </button>
     );
   } else {
@@ -34,7 +41,7 @@ export default function Roundel({
         title={title}
         {...props}
       >
-        <span className={styles.label}>{label}</span>
+        <span className={labelStyle}>{label}</span>
       </div>
     );
   }
