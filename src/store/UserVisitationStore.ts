@@ -8,7 +8,7 @@ export type StationStatus = "untouched" | "through" | "visited"
 export type StatusCount = { [T in StationStatus]: number}
 
 export interface UserStationStatus { [stationId : Station["id"]]  : StationStatus} 
-type UserLineStatus = {[T in LineId]? : StatusCount}
+export type UserLineStatus = {[T in LineId]? : StatusCount}
 
 export interface UserStore {
     stations: UserStationStatus
