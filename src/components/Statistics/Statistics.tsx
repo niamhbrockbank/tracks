@@ -5,6 +5,7 @@ import { useUserVisitationStore } from "../../store/UserVisitationStore";
 import StatisticsCard from "./StatisticsCard/StatisticsCard";
 import orderMostToLeastVisited from "./utils/orderMostToLeastVisited";
 import capitaliseFirstLetter from "../../lib/utils/capitaliseFirstLetter";
+import LineLeaderboard from "./LineLeaderboard/LineLeaderboard";
 
 export default function Statistics() {
   const [stationStats, lineStats] = useUserVisitationStore(
@@ -12,8 +13,17 @@ export default function Statistics() {
   );
 
   const statusTotals = countStatusTotals(stationStats);
+  const fullVisitedArray = orderMostToLeastVisited(lineStats);
   const [mostVisitedLine, secondMostVisitedLine, thirdMostVisitedLine] =
-    orderMostToLeastVisited(lineStats);
+    fullVisitedArray;
+
+  const fullVisitedLeaderboard = (
+    <LineLeaderboard lineArray={fullVisitedArray} />
+  );
+
+  const mostVisitedLineCardCaption = `2nd: ${capitaliseFirstLetter(
+    secondMostVisitedLine.id
+  )} and 3rd: ${capitaliseFirstLetter(thirdMostVisitedLine.id)}`;
 
   return (
     <section className={styles.statsSection}>
@@ -36,9 +46,12 @@ export default function Statistics() {
         <StatisticsCard
           title="Most Visited Line"
           content={capitaliseFirstLetter(mostVisitedLine.id)}
-          caption={`2nd: ${capitaliseFirstLetter(
-            secondMostVisitedLine.id
-          )} and 3rd: ${capitaliseFirstLetter(thirdMostVisitedLine.id)}`}
+          caption={mostVisitedLineCardCaption}
+        />
+        <StatisticsCard
+          title="Visited Leaderboard"
+          content={fullVisitedLeaderboard}
+          isList
         />
       </div>
     </section>

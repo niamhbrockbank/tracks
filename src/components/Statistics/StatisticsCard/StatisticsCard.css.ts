@@ -24,6 +24,10 @@ export const statsContent = style({
     fontWeight: 'bold'
 })
 
+export const statsList = style({
+    fontSize: '0.5rem'
+})
+
 export const statsCaption = style({
     textAlign: 'left',
     height: "50px",

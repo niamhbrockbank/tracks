@@ -11,6 +11,8 @@ export type StatusCount = { [T in StationStatus]: number}
 export type UserStationStatus = { [stationId : Station["id"]]  : StationStatus} 
 export type UserLineStatus = {[T in LineId]? : StatusCount}
 
+export interface LineStatusCount {id : LineId, status: StatusCount}
+
 export interface UserStore {
     stations: UserStationStatus
     lines: UserLineStatus
