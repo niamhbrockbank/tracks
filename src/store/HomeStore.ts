@@ -10,7 +10,7 @@ export type LineId = 'metropolitan' | 'jubilee' | 'bakerloo' | 'central' | 'circ
 export interface Station {
     id: string,
     name: string
-    lines : string[]
+    lines : Line["id"][]
 }
 
 interface HomeStore {
