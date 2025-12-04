@@ -1,8 +1,8 @@
 import type { Line, Station } from "../../../../store/HomeStore"
-import type { StatusCount, UserStore } from "../../../../store/UserVisitationStore"
+import type { StatusCount, UserStationStatus } from "../../../../store/UserVisitationStore"
 
 //TODO: Make the keys related to the StationStatus type instead of hardcoded
-export function countLineStatus(lineId : Line["id"], stations: Station[], stationStatuses: UserStore): StatusCount{
+export function countLineStatus(lineId : Line["id"], stations: Station[], stationStatuses: UserStationStatus): StatusCount{
     const statusCount = {
         untouched : 0,
         through: 0,

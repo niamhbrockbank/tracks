@@ -6,7 +6,6 @@ import StatusRoundel from "./StatusRoundel/StatusRoundel";
 import {
   setStationStatus,
   useUserVisitationStore,
-  type UserStore,
 } from "../../../../store/UserVisitationStore";
 
 interface Props {
@@ -15,7 +14,7 @@ interface Props {
 
 export default function VisitedStatus({ station }: Props) {
   const [stationStatus] = useUserVisitationStore(
-    useShallow((s: UserStore) => [s[station.id]])
+    useShallow((s) => [s.stations[station.id]])
   );
 
   return (

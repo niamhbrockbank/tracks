@@ -1,15 +1,19 @@
 import { useShallow } from "zustand/shallow";
 import * as styles from "./Statistics.css";
-import countTotalStatus from "./utils/countTotalStatus";
+import countStatusTotals from "./utils/countStatusTotals";
 import { useUserVisitationStore } from "../../store/UserVisitationStore";
-import { useHomeStore } from "../../store/HomeStore";
 import StatisticsCard from "./StatisticsCard/StatisticsCard";
+import orderMostToLeastVisited from "./utils/orderMostToLeastVisited";
+import capitaliseFirstLetter from "../../lib/utils/capitaliseFirstLetter";
 
 export default function Statistics() {
-  const [stationStat] = useUserVisitationStore(useShallow((s) => [s]));
-  const [stations] = useHomeStore(useShallow((s) => [s.stations]));
+  const [stationStats, lineStats] = useUserVisitationStore(
+    useShallow((s) => [s.stations, s.lines])
+  );
 
-  const statusTotals = countTotalStatus(stationStat);
+  const statusTotals = countStatusTotals(stationStats);
+  const [mostVisitedLine, secondMostVisitedLine, thirdMostVisitedLine] =
+    orderMostToLeastVisited(lineStats);
 
   return (
     <section className={styles.statsSection}>
@@ -29,7 +33,13 @@ export default function Statistics() {
           content={statusTotals.untouched}
           caption="-6% from last month"
         />
-        <StatisticsCard title="Total Stations" content={stations.length} />
+        <StatisticsCard
+          title="Most Visited Line"
+          content={capitaliseFirstLetter(mostVisitedLine.id)}
+          caption={`2nd: ${capitaliseFirstLetter(
+            secondMostVisitedLine.id
+          )} and 3rd: ${capitaliseFirstLetter(thirdMostVisitedLine.id)}`}
+        />
       </div>
     </section>
   );

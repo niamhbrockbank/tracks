@@ -2,7 +2,6 @@ import { useShallow } from "zustand/shallow";
 import { useHomeStore, type Line } from "../../../store/HomeStore";
 import * as styles from "./Line.css";
 import { useUserVisitationStore } from "../../../store/UserVisitationStore";
-import { countLineStatus } from "./utils/countLineStatus";
 import { useState } from "react";
 import Stations from "../../Stations/Stations";
 import Roundel from "../../Roundel/Roundel";
@@ -13,17 +12,13 @@ interface Props {
 
 export default function Line({ line }: Props) {
   const [stations] = useHomeStore(useShallow((s) => [s.stations]));
-  const [stationStatuses] = useUserVisitationStore(
+  const [lineStats] = useUserVisitationStore(
     useShallow((s) => {
-      return [s];
+      return [s.lines];
     })
   );
   const [stationsShown, setStationsShown] = useState(false);
-  const { untouched, through, visited } = countLineStatus(
-    line.id,
-    stations,
-    stationStatuses
-  );
+  const { untouched, visited, through } = lineStats[line.id]!;
 
   return (
     <div className={styles.line[line.id]}>

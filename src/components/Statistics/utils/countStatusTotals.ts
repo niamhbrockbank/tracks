@@ -1,6 +1,6 @@
-import type {  StatusCount, UserStore } from "../../../store/UserVisitationStore";
+import type {  StatusCount, UserStationStatus } from "../../../store/UserVisitationStore";
 
-export default function countTotalStatus(stations : UserStore): StatusCount {
+export default function countStatusTotals(stations : UserStationStatus): StatusCount {
     const statusCount = {
         untouched: 0,
         through: 0,

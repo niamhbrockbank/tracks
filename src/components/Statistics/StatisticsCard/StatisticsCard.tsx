@@ -12,7 +12,7 @@ export default function StatisticsCard({ title, content, caption }: Props) {
     <div className={styles.statsCard}>
       <p className={styles.statsTitle}>{title}</p>
       <span className={styles.statsContent}>{content}</span>
-      <caption className={styles.statsCaption}>{caption}</caption>
+      <span className={styles.statsCaption}>{caption}</span>
     </div>
   );
 }

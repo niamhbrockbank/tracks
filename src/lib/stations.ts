@@ -133,9 +133,6 @@ export const STATIONS : Station[] = [
     "name": "Buckhurst Hill",
     "lines": [
       "central",
-      "w14",
-      "167",
-      "677"
     ]
   },
   {
@@ -385,10 +382,7 @@ export const STATIONS : Station[] = [
     "id": "940GZZLUCWL",
     "name": "Chigwell",
     "lines": [
-      "central",
-      "677",
-      "167",
-      "667"
+      "central"
     ]
   },
   {
@@ -658,7 +652,6 @@ export const STATIONS : Station[] = [
     "id": "940GZZLUGGH",
     "name": "Grange Hill",
     "lines": [
-      "462",
       "central"
     ]
   },
@@ -931,14 +924,6 @@ export const STATIONS : Station[] = [
     "id": "940GZZLUKNB",
     "name": "Knightsbridge",
     "lines": [
-      "22",
-      "19",
-      "137",
-      "452",
-      "c1",
-      "n19",
-      "n22",
-      "n137",
       "piccadilly"
     ]
   },
@@ -1015,11 +1000,6 @@ export const STATIONS : Station[] = [
     "id": "940GZZLULGN",
     "name": "Loughton",
     "lines": [
-      "167",
-      "w14",
-      "20",
-      "397",
-      "677",
       "central"
     ]
   },

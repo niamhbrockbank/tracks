@@ -1,4 +1,5 @@
-import type { Line } from "../store/HomeStore";
+import type { Line, LineId } from "../store/HomeStore";
+import { STATIONS } from "./stations";
 
 export const LINES :  Line[] = [
     {
@@ -47,3 +48,15 @@ export const LINES :  Line[] = [
         name: 'Waterloo & City',
     },
 ]
+
+type LineStationTally = Record<LineId, number>
+const NUMBER_STATIONS_ON_LINE = LINES.reduce<LineStationTally>((prev, cur) => ({...prev, [cur.id] : 0}), {} as LineStationTally)
+
+STATIONS.forEach((station) => {
+    for (const line of station.lines){
+        NUMBER_STATIONS_ON_LINE[line] += 1
+    }
+})
+
+
+export const INITIAL_LINE_STATUS = LINES.reduce((prev, cur) => ({...prev, [cur.id] : {untouched: NUMBER_STATIONS_ON_LINE[cur.id], through: 0, visited: 0}}), {})
