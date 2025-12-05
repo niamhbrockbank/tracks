@@ -1,7 +1,5 @@
 import type { LineId } from "../../../store/HomeStore";
-import type { StatusCount, UserLineStatus } from "../../../store/UserVisitationStore";
-
-interface LineStatusCount {id : LineId, status: StatusCount}
+import type { LineStatusCount, UserLineStatus } from "../../../store/UserVisitationStore";
 
 export default function orderMostToLeastVisited(lineStatuses: UserLineStatus): LineStatusCount[] {
     const lineIds = Object.keys(lineStatuses) as LineId[]
